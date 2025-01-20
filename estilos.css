@@ -141,15 +141,15 @@ button {
 /*Secciones*/
 /***********/
 .section {
-    padding: 15px 90px;
+    padding: 0.9375rem 5.625rem;/*15 y 90*/
 }
 
 .seccion-header {
-    margin-bottom: 15px;
+    margin-bottom: 0.9375rem;/*15*/
 }
 
 .seccion-header h1 {
-    font-size: 30px;
+    font-size: 1.875rem;/*30*/
 }
 
 /*Seccion hero*/
@@ -777,10 +777,6 @@ button {
     .mapa {
         height: 270px;
     }
-
-    .info-contacto-footer p {
-        font-size: 13px;
-    }
 }
 
 @media screen and (max-width: 475px) {
@@ -791,6 +787,20 @@ button {
     .seccion-hero {
         background-image: url('img/imagen-hero-mobile.avif');
     }
+
+    .info-contacto-footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .info-contacto-footer p {
+        font-size: 13px;
+    }
+
+    .redes-sociales-footer {
+        margin: auto;
+    }
 }
 
 @media screen and (max-width: 361px) {
@@ -800,16 +810,6 @@ button {
 
     .tarjeta-destacada .info-bebida {
         font-size: 13px;
-    }
-
-    .info-contacto-footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .redes-sociales-footer {
-        margin: auto;
     }
 }
 
