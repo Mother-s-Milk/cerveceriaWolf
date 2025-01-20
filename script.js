@@ -36,7 +36,7 @@ let menuController = {
         cervezasPagina.forEach(cerveza => {
             let tarjetaCerveza = `
                 <div class="tarjeta-bebida tarjeta-menu">
-                    <img src="${cerveza.imgPath}" alt="${cerveza.nombre}">
+                    <img src="${cerveza.imgPath}" alt="${cerveza.nombre}" loading="lazy">
                     <h2>${cerveza.nombre}</h2>
                     <div class="info-bebida">
                         <span>${cerveza.categoria}</span>
@@ -99,11 +99,32 @@ let menuController = {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    menuController.solicitarBebidas(); // Cargar cervezas al iniciar
+    menuController.solicitarBebidas();
 
     document.getElementById("btn-menu-desplegable").addEventListener("click", () => {
-        const navHeader = document.getElementById("nav-header");
-        navHeader.classList.toggle("active"); // Muestra o esconde la barra
+        const navMenu = document.getElementById("nav-menu");
+        const iconoMenu = document.getElementById("icono-menu");
+    
+        navMenu.classList.toggle("active");
+    
+        //Cambia el ícono de hamburguesa a "X" y viceversa
+        if (navMenu.classList.contains("active")) {
+            iconoMenu.classList.remove("fa-bars");
+            iconoMenu.classList.add("fa-times");
+        } else {
+            iconoMenu.classList.remove("fa-times");
+            iconoMenu.classList.add("fa-bars");
+        }
+    });
+    
+
+    window.addEventListener("load", () => {
+        const preloader = document.querySelector(".preloader");
+        preloader.style.opacity = "0";
+        preloader.style.visibility = "hidden";
+        setTimeout(() => {
+            preloader.style.display = "none"; // Remueve el elemento completamente
+        }, 500); // Tiempo que coincide con la transición de CSS
     });
     
 });

@@ -12,9 +12,46 @@ body {
     overflow-x: hidden;
     font-family: 'Nunito', Arial, Helvetica, sans-serif;
     background-color: #eee;
+    -webkit-font-smoothing: antialiased; /* Mejora en Chrome, Safari */
+    -moz-osx-font-smoothing: grayscale; /* Mejora en Firefox */
 }
 
-/**/
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #ccc;
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+/*****************************************/
+/*Estilos para elementos html especificos*/
+/*****************************************/
 ul {
     list-style-type: none;
 }
@@ -25,6 +62,7 @@ a {
 
 button {
     font-family: 'Nunito', Arial, Helvetica, sans-serif;
+    cursor: pointer;
 }
 
 .container {
@@ -32,7 +70,9 @@ button {
     margin: 0 auto;
 }
 
+/********/
 /*Header*/
+/********/
 .header-principal {
     position: absolute;
     top: 0;
@@ -40,62 +80,66 @@ button {
     width: 100%;
 }
 
-.header-principal > div {
+.navegacion-principal-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 7.5px 30px;
+    padding: 0.9375rem 1.875rem;/*15 y 30*/
 }
 
 #btn-menu-desplegable {
     display: none;
     background-color: transparent;
     border: none;
-    font-size: 24px;
+    font-size: 1.875rem;/*30*/
     color: #fff;
-    cursor: pointer;
-    padding: 7.5px;
+    padding: 0.46875rem;/*7.5*/
     z-index: 999;
 }
 
+#btn-menu-desplegable i {
+    transition: transform 0.5s ease, opacity 0.5s ease;/*Animación suave para el cambio*/
+}
+
+#btn-menu-desplegable .fa-times {
+    transform: rotate(180deg);/*Rota la "X"*/
+}
+
 .logo {
-    width: 100px;
-    height: 100px;
+    width: 6.5625rem;/*105*/
+    height: 6.5625rem;/*105*/
 }
 
-.logo a {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
+.logo a,
 .logo a img {
     display: block;
     width: 100%;
     height: 100%;
 }
 
-.nav-header ul {
+.nav-menu ul {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 0.9375rem;/*15*/
 }
 
-.nav-header ul li a {
+.nav-menu ul li a {
     color: #fff;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 1.3125rem;/*21*/
+    font-weight: 700;
     display: block;
-    padding: 7.5px 0;
+    padding: 7.5px;
     text-transform: uppercase;
+    transition: color 0.3s ease;
 }
 
-.nav-header.active {
-    top: 0;
-    z-index: 998;
+.nav-menu ul li a:hover {
+    color: #ffc107;
 }
 
+/***********/
 /*Secciones*/
+/***********/
 .section {
     padding: 15px 90px;
 }
@@ -273,7 +317,6 @@ button {
 
 .filtros select {
     height: 36px;
-    width: 240px;
     font-size: 18px;
     font-family: 'Nunito', Arial, Helvetica, sans-serif;
     border: 1px solid #ddd;
@@ -399,9 +442,6 @@ button {
 /********/
 /*Footer*/
 .footer-principal {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     background-color: #111;
     padding: 15px 30px;
 }
@@ -421,10 +461,6 @@ button {
 .info-contacto-footer p {
     font-size: 15px;
     color: #fff;
-}
-
-.redes-sociales-footer {
-    margin: auto;
 }
 
 .redes-sociales-footer ul {
@@ -456,9 +492,12 @@ button {
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    vertical-align: middle;
 }
 
+/********/
 /*Mobile*/
+/********/
 @media screen and (max-width: 1256px) {
     .tarjeta-menu .info-bebida {
         font-size: 15px;
@@ -548,8 +587,8 @@ button {
 }
 
 @media screen and (max-width: 1005px) {
-    .header-principal > div {
-        padding: 7.5px 15px;
+    .navegacion-principal-container {
+        padding: 15px;
     }
 
     .seccion-hero {
@@ -565,7 +604,7 @@ button {
     }
 
     .footer-principal {
-        padding: 7.5px 15px;
+        padding: 15px;
     }
 }
 
@@ -580,14 +619,19 @@ button {
         display: block;
     }
 
-    .nav-header {
+    .nav-menu.active {
+        top: 0;
+        z-index: 998;
+    }
+
+    .nav-menu {
         position: fixed;
         top: -100vh;
         left: 0;
         width: 100%;
         height: 100%;
         background-color: #111;
-        transition: top 0.3s ease-in-out;
+        transition: top 0.6s ease;
         padding: 7.5px;
         display: flex;
         justify-content: center;
@@ -595,12 +639,12 @@ button {
         flex-direction: column;
     }
 
-    .nav-header ul {
+    .nav-menu ul {
         flex-direction: column;
         gap: 15px;
     }
     
-    .nav-header ul li a {
+    .nav-menu ul li a {
         font-size: 30px;
         padding: 7.5px;
     }
@@ -736,16 +780,14 @@ button {
 
     .info-contacto-footer p {
         font-size: 13px;
-        color: #fff;
     }
 }
 
 @media screen and (max-width: 475px) {
-    .logo {
-        width: 60px;
-        height: 60px;
+    #btn-menu-desplegable {
+        font-size: 27px;/*24*/
     }
-
+    
     .seccion-hero {
         background-image: url('img/imagen-hero-mobile.avif');
     }
@@ -759,13 +801,15 @@ button {
     .tarjeta-destacada .info-bebida {
         font-size: 13px;
     }
-}
 
-@media screen and (max-width: 320px) {
     .info-contacto-footer-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+
+    .redes-sociales-footer {
+        margin: auto;
     }
 }
 
