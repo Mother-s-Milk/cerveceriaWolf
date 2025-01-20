@@ -9,14 +9,14 @@ let menuController = {
         .then(response => response.json())
         .then(data => {
             menuController.bebidas = data.bebidas;
-            menuController.totalPaginas = Math.ceil(menuController.bebidas.length / menuController.bebidasPorPagina);
-            menuController.categorias = data.categorias;
-            menuController.mostrarBebidas(); // Mostrar cervezas
-            menuController.mostrarPaginacion(); // Mostrar paginación
+            /*menuController.totalPaginas = Math.ceil(menuController.bebidas.length / menuController.bebidasPorPagina);
+            menuController.categorias = data.categorias;*/
+            menuController.mostrarBebidas(menuController.bebidas); // Mostrar cervezas
+            //menuController.mostrarPaginacion(); // Mostrar paginación
         })
         .catch(error => console.error('Error cargando el JSON:', error));
     },
-    mostrarBebidas: () => {
+    mostrarBebidas: (cervezasPagina) => {
         let gridMenu = document.getElementById("grid-carta");
         gridMenu.innerHTML = ''; // Limpiar el contenido previo
 
@@ -26,16 +26,16 @@ let menuController = {
         }
 
         // Calcular el índice de inicio y fin de las cervezas para la página actual
-        let inicio = (menuController.paginaActual - 1) * menuController.bebidasPorPagina;
-        let fin = inicio + menuController.bebidasPorPagina;
+        /*let inicio = (menuController.paginaActual - 1) * menuController.bebidasPorPagina;
+        let fin = inicio + menuController.bebidasPorPagina;*/
         
         // Obtener las cervezas de la página actual
-        let cervezasPagina = menuController.bebidas.slice(inicio, fin);
+        /*let cervezasPagina = menuController.bebidas.slice(inicio, fin);*/
         
         // Iterar sobre las cervezas de la página actual
         cervezasPagina.forEach(cerveza => {
             let tarjetaCerveza = `
-                <div class="tarjeta-bebida menu">
+                <div class="tarjeta-bebida tarjeta-menu">
                     <img src="${cerveza.imgPath}" alt="${cerveza.nombre}">
                     <h2>${cerveza.nombre}</h2>
                     <div class="info-bebida">
@@ -61,7 +61,7 @@ let menuController = {
             `;
             gridMenu.insertAdjacentHTML('beforeend', tarjetaCerveza);
         });
-    },
+    }/*,
     mostrarPaginacion: () => {
         let paginacion = document.getElementById("paginacion");
         paginacion.innerHTML = ''; // Limpiar la paginación previa
@@ -95,7 +95,7 @@ let menuController = {
                 }
             });
         });
-    }
+    }*/
 }
 
 document.addEventListener("DOMContentLoaded", () => {
