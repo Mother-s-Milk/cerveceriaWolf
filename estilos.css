@@ -156,7 +156,7 @@ button {
 .seccion-hero {
     height: 100vh;
     background-image: url('img/imagen-hero-desktop.avif');
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .4);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -239,7 +239,7 @@ button {
 
 .info-bebida {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 7.5px;
     width: 100%;
     font-size: 18px;

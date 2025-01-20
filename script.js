@@ -117,6 +117,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
     
+    // Cerrar el menú al hacer clic en un enlace
+    const enlacesMenu = document.querySelectorAll(".nav-menu ul li a");
+    enlacesMenu.forEach(enlace => {
+        enlace.addEventListener("click", () => {
+            const navMenu = document.getElementById("nav-menu");
+            const iconoMenu = document.getElementById("icono-menu");
+
+            // Esconde el menú y vuelve al ícono de hamburguesa
+            navMenu.classList.remove("active");
+            iconoMenu.classList.remove("fa-times");
+            iconoMenu.classList.add("fa-bars");
+        });
+    });
 
     window.addEventListener("load", () => {
         const preloader = document.querySelector(".preloader");
