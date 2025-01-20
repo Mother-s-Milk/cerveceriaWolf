@@ -1,0 +1,549 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Nunito', Arial, Helvetica, sans-serif;
+    background-color: #eee;
+}
+
+/**/
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-family: 'Nunito', Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/*Header*/
+.header-principal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header-principal > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 7.5px 30px;
+}
+
+#btn-menu-desplegable {
+    display: none;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #eee;
+    cursor: pointer;
+    padding: 7.5px;
+    z-index: 999;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.logo a img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-header {
+    /*position: fixed;
+    top: -100vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    transition: top 0.3s ease-in-out;
+    padding: 7.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;*/
+}
+
+.nav-header ul {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-header ul li a {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    padding: 7.5px 0;
+    text-transform: uppercase;
+}
+
+.nav-header.active {
+    top: 0;
+    z-index: 998;
+}
+
+/*Secciones*/
+.section {
+    padding: 15px 60px;
+}
+
+.seccion-header {
+    margin-bottom: 15px;
+}
+
+.seccion-header h1 {
+    font-size: 30px;
+}
+
+/*Seccion hero*/
+.seccion-hero {
+    height: 100vh;
+    background-image: url('img/imagen-hero-desktop.jpg');
+    background-color: rgba(0, 0, 0, .5);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    flex-direction: column;
+    padding: 15px 60px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 7.5px;
+    width: auto;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    color: #fff;
+    font-size: 21px;
+    font-weight: 600;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+}
+
+.hero-content h2 {
+    font-family: "Orbitron", Arial, Helvetica, sans-serif;
+    font-size: 45px;
+    color: #eee;
+    line-height: 60px;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+}
+
+/*Seccion destacadas*/
+.seccion-destacadas {
+    display: flex;
+    gap: 15px;
+    /*flex-wrap: nowrap;
+    overflow: hidden;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 15px;*/
+}
+
+/*.seccion-destacadas::-webkit-scrollbar {
+    height: 3.75px;
+    border-radius: 7.5px;
+}
+  
+.seccion-destacadas::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 7.5px;
+}
+  
+.seccion-destacadas::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+  
+.seccion-destacadas::-webkit-scrollbar-track {
+    background: #ddd;
+}*/
+
+.tarjeta-bebida {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 7.5px;
+    box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 7.5px;
+    /*max-width: 250px;
+    flex-shrink: 0;*/
+}
+
+/*.menu {
+    max-width: 100%;
+}*/
+
+.imagen-destacada {
+    position: relative;
+    width: 100%;
+}
+
+.imagen-destacada img {
+    width: 100%;
+    border-radius: 7.5px;
+    display: block;
+}
+
+.imagen-destacada span {
+    position: absolute;
+    top: 7.5px;
+    left: 7.5px;
+    background-color: #f57c00;
+    color: #fff;
+    padding: 3.75px;
+    border-radius: 3.75px;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    z-index: 1;
+    border: 1px solid #000;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 3);
+}
+
+.tarjeta-bebida h2 {
+    font-size: 27px;
+}
+
+.info-bebida {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 18px;
+    color: #333;
+}
+
+.acciones-tarjeta {
+    display: flex;
+    gap: 15px;
+}
+
+.acciones-tarjeta button {
+    border: none;
+    border-radius: 3.75px;
+    padding: 7.5px;
+    text-transform: uppercase;
+    font-family: 'Nunito', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #fff;
+}
+
+.btn-mas-info {
+    background-color: #007bff;
+}
+
+.btn-mas-info:hover {
+    background-color: #0056b3;
+}
+
+.btn-carrito {
+    background-color: #28a745;
+}
+
+.btn-carrito:hover {
+    background-color: #218838;
+}
+
+/*********/
+/*Divisor*/
+/*********/
+.divisor-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+  
+.divisor {
+    border: none;
+    border-radius: 3.75px;
+    height: 2px;
+    background-color: #ccc;
+    width: 100%;
+}
+
+/*Seccion carta*/
+.seccion-carta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.filtros {
+    box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+    border-radius: 7.5px;
+    padding: 15px;
+    background-color: #fff;
+}
+
+.filtros select {
+    height: 36px;
+    border-radius: 7.5px;
+    font-size: 18px;
+    font-family: 'Nunito', Arial, Helvetica, sans-serif;
+    border: 1px solid #ddd;
+    padding: 3.75px;
+    width: auto;
+}
+
+.filtros,
+.grid-carta {
+    width: 100%;
+}
+
+.grid-carta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.menu img {
+    width: 100%;
+    border-radius: 7.5px;
+    display: block;
+}
+
+.paginacion {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 7.5px;
+    justify-content: center;
+}
+
+.paginacion-btn {
+    background-color: #111;
+    border: none;
+    color: white;
+    padding: 3.75px 7.58px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 3.75px;
+}
+
+.paginacion-btn:hover {
+    background-color: #333;
+}
+
+.paginacion-btn.active {
+    background-color: #f57c00;
+    color: #000;
+}
+
+.paginacion-btn:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+}
+
+/******************/
+/*Seccion contacto*/
+.info-contacto-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.info-contacto-container > div {
+    width: calc(50%);
+}
+
+.info-contacto,
+.formulario-contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-contacto span {
+    display: flex;
+    align-items: center;
+    gap: 7.5px;
+    font-size: 21px;
+}
+
+.info-contacto span i {
+    color: #E63946;
+}
+
+.formulario-contacto form input {
+    height: 45px;
+    font-family: 'Nunito', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    border-radius: 3.75px;
+    border: 1px solid #eee;
+    padding: 7.5px;
+}
+
+.formulario-contacto form textarea {
+    height: 90px;
+    font-family: 'Nunito', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    border-radius: 3.75px;
+    border: 1px solid #eee;
+    resize: none;
+    padding: 7.5px;
+}
+
+.formulario-contacto form button {
+    margin: auto;
+    width: auto;
+    background-color: #28A745;
+    padding: 7.5px 15px;
+    color: #fff;
+    border: none;
+    border-radius: 3.75px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.mapa {
+    height: 300px;
+    width: 100%;
+    border: 1px solid #eee;
+    box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1);
+    border-radius: 7.5px;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 7.5px;
+}
+
+/********/
+/*Footer*/
+.footer-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #111;
+    padding: 15px 30px;
+}
+
+.info-contacto-footer-container {
+    display: flex;
+    align-items: center;
+    gap: 7.5px;
+}
+
+.info-contacto-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 3.75px;
+}
+
+.info-contacto-footer p {
+    font-size: 13px;
+    color: #fff;
+}
+
+.redes-sociales-footer ul {
+    display: flex;
+    gap: 7.5px;
+    align-items: center;
+}
+
+.redes-sociales-footer ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #f57c00;
+    border-radius: 50%;
+    width: 27px;
+    height: 27px;
+    align-content: center;
+}
+
+.redes-sociales-footer ul li a {
+    font-size: 21px;
+    color: #000;
+    padding: 7.5px;
+    border-radius: 50%;
+}
+
+/*@media screen and (min-width: 548px) {
+    .seccion-hero {
+        background-image: url('img/imagen-hero-tablet.jpg');
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .btn-menu-desplegable {
+        display: none;
+    }
+
+    .nav-header {
+        position: relative;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        width: auto;
+    }
+    
+    .nav-header ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        align-items: end;
+    }
+    
+    .nav-header ul li a {
+        font-size: 18px;
+    }
+    
+    .nav-header.active {
+        top: 0;
+        z-index: 998;
+    }
+
+    .logo {
+        width: 90px;
+        height: 90px;
+    }
+}

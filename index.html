@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerveceria GoodFellas</title>
+
+    <link rel="stylesheet" href="estilos.css">
+    <script defer src="script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rock+Salt&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="header-principal">
+        <div>
+            <button type="button" id="btn-menu-desplegable"><i class="fa-solid fa-bars"></i></button>
+            <div class="logo">
+                <a href="#">
+                    <img src="img/logo.png" alt="">
+                </a>
+            </div>
+            <nav class="nav-header" id="nav-header">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Cervezas</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="seccion-hero">
+            <div class="hero-content">
+                <p>Viernes de:<br>
+                <hr>
+                <h2>Promo<br>en<br>tragos</h2>
+            </div>
+        </section>
+        <section class="container section">
+            <header class="seccion-header">
+                <h1>-Cervezas-</h1>
+            </header>
+            <div class="seccion-destacadas">
+                <div class="tarjeta-bebida">
+                    <div class="imagen-destacada">
+                        <span aria-label="Novedad">
+                            Novedad
+                        </span>
+                        <img src="img/destacada1.jpeg" alt="Imagen de Lúpulo Salvaje">
+                    </div>
+                    <h2>
+                        Lúpulo Salvaje
+                    </h2>
+                    <div class="info-bebida destacada">
+                        <span>IPA (Indian Pale Ale)</span>
+                        <span>|</span>
+                        <span>6.5%</span>
+                        <span>|</span>
+                        <span>60 IBU</span>
+                    </div>
+                    <footer class="acciones-tarjeta">
+                        <button type="button" class="btn-carrito"><i class="fa-solid fa-cart-shopping"></i></button>
+                        <button type="button" class="btn-mas-info" data-beer="novedad"><i class="fa-solid fa-eye"></i></button>
+                    </footer>
+                </div>
+
+                <div class="tarjeta-bebida">
+                    <div class="imagen-destacada">
+                        <span aria-label="Novedad">
+                            La mas pedida
+                        </span>
+                        <img src="img/destacada2.jpeg" alt="Imagen de Lúpulo Salvaje">
+                    </div>
+                    <h2>
+                        Dorado Miel
+                    </h2>
+                    <div class="info-bebida destacada">
+                        <span>Belgian Tripel</span>
+                        <span>|</span>
+                        <span>8.5%</span>
+                        <span>|</span>
+                        <span>30 IBU</span>
+                    </div>
+                    <footer class="acciones-tarjeta">
+                        <button type="button" class="btn-carrito"><i class="fa-solid fa-cart-shopping"></i></button>
+                        <button type="button" class="btn-mas-info" data-beer="mas-pedida"><i class="fa-solid fa-eye"></i></button>
+                    </footer>
+                </div>
+
+                <div class="tarjeta-bebida">
+                    <div class="imagen-destacada">
+                        <span aria-label="Novedad">
+                            Clasica
+                        </span>
+                        <img src="img/destacada3.jpeg" alt="Imagen de Lúpulo Salvaje">
+                    </div>
+                    <h2>
+                        Trigo Suave
+                    </h2>
+                    <div class="info-bebida destacada">
+                        <span>Hefeweizen</span>
+                        <span>|</span>
+                        <span>5.2%</span>
+                        <span>|</span>
+                        <span>15 IBU</span>
+                    </div>
+                    <footer class="acciones-tarjeta">
+                        <button type="button" class="btn-carrito"><i class="fa-solid fa-cart-shopping"></i></button>
+                        <button type="button" class="btn-mas-info" data-beer="clasica"><i class="fa-solid fa-eye"></i></button>
+                    </footer>
+                </div>
+            </div>
+        </section>
+
+        <div class="divisor-container">
+            <hr class="divisor">
+        </div>
+            
+        <section class="container section animation-section">
+            <header class="seccion-header">
+                <h1>-Carta-</h1>
+            </header>
+            <div class="seccion-carta">
+                <aside class="filtros">
+                    <select>
+                        <option value="" disabled selected>Seleccione un estilo...</option>
+                        <option value="">Todas</option>
+                        <option value="">Novedad</option>
+                        <option value="">IPA</option>
+                        <option value="">Clásica</option>
+                        <option value="">Amargas</option>
+                        <option value="">Dulces</option>
+                    </select>
+                </aside>
+                <section class="grid-carta" id="grid-carta">
+                </section>
+                <div id="paginacion" class="paginacion">
+                </div>
+            </div>
+        </section>
+
+        <div class="divisor-container">
+            <hr class="divisor">
+        </div>
+
+        <section class="container section animation-section">
+            <header class="seccion-header">
+                <h1>Contacto</h1>
+            </header>
+            <main class="seccion-contacto">
+                <div class="info-contacto-container">
+                    <div class="info-contacto">
+                        <span><i class="fa-solid fa-phone"></i><p>297-4962803</p></span>
+                        <span><i class="fa-solid fa-envelope"></i><p>cerveceriawolf@gmail.com</p></span>
+                        <span><i class="fa-solid fa-location-dot"></i><p>Avenida Independencia 504</p></span>
+                    </div>
+                    <div class="formulario-contacto">
+                        <form action="">
+                            <input type="text" name="" id="" placeholder="Nombre">
+                            <input type="email" placeholder="Correo electronico">
+                            <textarea name="" id="" placeholder="Mensaje"></textarea>
+                            <button type="button">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="mapa">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2749.27752366272!2d-67.5210773236722!3d-46.44319787110679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbde5df7a0eedf349%3A0xc7dbf3fc1cbd59fa!2sWolf%20Cerveceria%20Artesanal!5e0!3m2!1ses-419!2sar!4v1737249544996!5m2!1ses-419!2sar" width="" height="" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </main>
+        </section>
+    </main>
+    <footer class="footer-principal">
+        <div class="info-contacto-footer-container">
+            <div class="logo">
+                <a href="#">
+                    <img src="img/logo.png" alt="">
+                </a>
+            </div>
+            <div class="info-contacto-footer">
+                <div>
+                    <p>297-4962803</p>
+                    <p>cerveceriawolf@gmail.com
+                    <p>Avenida Independencia 504</p>
+                </div>
+                <div class="redes-sociales-footer">
+                    <ul>
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

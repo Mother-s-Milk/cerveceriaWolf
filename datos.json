@@ -1,0 +1,139 @@
+{
+    "bebidas": [
+      {
+        "id": 1,
+        "nombre": "Lúpulo Salvaje",
+        "descripcion": "Una IPA (Indian Pale Ale) con un sabor amargo y tropical.",
+        "precio": 250,
+        "amargor": 60,
+        "alcohol": 6.5,
+        "categoria": "IPA",
+        "imgPath": "img/imgReferencia.jpg"
+      },
+      {
+        "id": 2,
+        "nombre": "Dorado Miel",
+        "descripcion": "Una Belgian Tripel con un sabor suave y ligeramente dulce.",
+        "precio": 300,
+        "amargor": 30,
+        "alcohol": 8.5,
+        "categoria": "Clásica",
+        "imgPath": "img/imgReferencia.jpg"
+      },
+      {
+        "id": 3,
+        "nombre": "Trigo Suave",
+        "descripcion": "Una Hefeweizen ligera y refrescante, ideal para días cálidos.",
+        "precio": 220,
+        "amargor": 15,
+        "alcohol": 5.2,
+        "categoria": "Trigo",
+        "imgPath": "img/imgReferencia.jpg"
+      },
+      {
+        "id": 4,
+        "nombre": "Oscura Estrella",
+        "descripcion": "Una stout con un perfil de sabor robusto y notas a café.",
+        "precio": 280,
+        "amargor": 50,
+        "alcohol": 7.8,
+        "categoria": "Oscuras",
+        "imgPath": "img/imgReferencia.jpg"
+      },
+      {
+        "id": 5,
+        "nombre": "Rubia Fresca",
+        "descripcion": "Una Lager ligera, fresca y fácil de beber.",
+        "precio": 210,
+        "amargor": 20,
+        "alcohol": 4.5,
+        "categoria": "Lager",
+        "imgPath": "img/imgReferencia.jpg"
+      },
+      {
+        "id": 6,
+        "nombre": "Fuego Rojo",
+        "descripcion": "Una cerveza con un toque de especias y un sabor picante.",
+        "precio": 270,
+        "amargor": 40,
+        "alcohol": 6.0,
+        "categoria": "Especiadas",
+        "imgPath": "img/imgReferencia.jpg"
+      },
+      {
+        "id": 7,
+        "nombre": "Blanca de Mar",
+        "descripcion": "Una cerveza de trigo con un toque cítrico, refrescante.",
+        "precio": 230,
+        "amargor": 15,
+        "alcohol": 5.0,
+        "categoria": "Suaves",
+        "imgPath": "img/imgReferencia.jpg"
+      },
+      {
+        "id": 8,
+        "nombre": "Áurea Dorada",
+        "descripcion": "Una Pale Ale con un balance perfecto entre malta y amargor.",
+        "precio": 260,
+        "amargor": 45,
+        "alcohol": 6.2,
+        "categoria": "IPA",
+        "imgPath": "img/imgReferencia.jpg"
+      },
+      {
+        "id": 9,
+        "nombre": "Negra Profunda",
+        "descripcion": "Una Porter oscura con sabores intensos a chocolate y café.",
+        "precio": 290,
+        "amargor": 70,
+        "alcohol": 7.0,
+        "categoria": "Oscuras",
+        "imgPath": "img/imgReferencia.jpg"
+      },
+      {
+        "id": 10,
+        "nombre": "Roja Temprana",
+        "descripcion": "Una cerveza Amber Ale con sabores a malta caramelizada.",
+        "precio": 275,
+        "amargor": 35,
+        "alcohol": 6.8,
+        "categoria": "Amber Ale",
+        "imgPath": "img/imgReferencia.jpg"
+      },
+      {
+        "id": 11,
+        "nombre": "Luz de Verano",
+        "descripcion": "Una cerveza refrescante, ideal para disfrutar al aire libre.",
+        "precio": 220,
+        "amargor": 25,
+        "alcohol": 5.0,
+        "categoria": "Suaves",
+        "imgPath": "img/imgReferencia.jpg"
+      },
+      {
+        "id": 12,
+        "nombre": "Cítrico Fuerte",
+        "descripcion": "Una cerveza amarga con un toque de cítricos intensos.",
+        "precio": 240,
+        "amargor": 55,
+        "alcohol": 6.3,
+        "categoria": "Cítricas",
+        "imgPath": "img/imgReferencia.jpg"
+      }
+    ],
+    "categoria": [
+      "Novedad",
+      "IPA",
+      "Clásica",
+      "Amargas",
+      "Dulces",
+      "Lager",
+      "Suaves",
+      "Oscuras",
+      "Especiadas",
+      "Trigo",
+      "Cítricas",
+      "Amber Ale"
+    ]
+  }
+  
