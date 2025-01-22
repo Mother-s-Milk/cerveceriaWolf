@@ -53,7 +53,7 @@ let menuController = {
                             aria-label="Agregar ${cerveza.nombre} al carrito">
                             <i class="fa-solid fa-cart-shopping"></i>
                         </button>
-                        <button type="button" class="btn-mas-info">
+                        <button type="button" class="btn-ver-mas">
                             <i class="fa-solid fa-eye"></i>
                         </button>
                     </footer>
@@ -139,5 +139,41 @@ document.addEventListener("DOMContentLoaded", () => {
             preloader.style.display = "none"; // Remueve el elemento completamente
         }, 500); // Tiempo que coincide con la transición de CSS
     });
-    
+
+    // Seleccionamos todos los botones "Ver más" y "Ver menos"
+    const botonesVerMas = document.querySelectorAll('.btn-ver-mas');
+    const botonesVerMenos = document.querySelectorAll('.btn-ver-menos');
+
+    // Función para mostrar la descripción
+    const mostrarDescripcion = (boton) => {
+        const tarjeta = boton.closest('.tarjeta-container'); // Encuentra el contenedor más cercano
+        const descripcion = tarjeta.querySelector('.bebida-descripcion'); // Busca la descripción en la tarjeta actual
+        descripcion.classList.add('mostrar-descripcion'); // Muestra la descripción
+        tarjetaBebida.classList.add('blur');
+        tarjeta.classList.add('activa');
+    };
+
+    // Función para ocultar la descripción
+    const ocultarDescripcion = (boton) => {
+        const tarjeta = boton.closest('.tarjeta-container'); // Encuentra el contenedor más cercano
+        const descripcion = tarjeta.querySelector('.bebida-descripcion'); // Busca la descripción en la tarjeta actual
+        descripcion.classList.remove('mostrar-descripcion'); // Oculta la descripción
+        tarjetaBebida.classList.remove('blur');
+        tarjeta.classList.remove('activa');
+    };
+
+    // Asignamos eventos a los botones "Ver más"
+    botonesVerMas.forEach((boton) => {
+        boton.addEventListener('click', () => {
+            mostrarDescripcion(boton); // Llamamos a la función para mostrar la descripción
+        });
+    });
+
+    // Asignamos eventos a los botones "Ver menos"
+    botonesVerMenos.forEach((boton) => {
+        boton.addEventListener('click', () => {
+            ocultarDescripcion(boton); // Llamamos a la función para ocultar la descripción
+        });
+    });
+
 });

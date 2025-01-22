@@ -197,6 +197,10 @@ button {
     gap: 15px;
 }
 
+.tarjeta-container {
+    position: relative;
+}
+
 .tarjeta-bebida {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -206,6 +210,70 @@ button {
     align-items: center;
     padding: 15px;
     gap: 7.5px;
+}
+
+.tarjeta-bebida.blur {
+    filter: blur(3px);
+    transition: filter 0.4s ease;
+}
+
+.tarjeta-container.activa {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.4s ease;
+}
+
+.bebida-descripcion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7.5px;
+    text-align: center;
+    padding: 15px;
+    opacity: 0; /* Comienza invisible */
+    transform: scale(0.9); /* Leve reducción inicial */
+    pointer-events: none; /* Evita la interacción cuando está oculto */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Transición suave */
+}
+
+.mostrar-descripcion {
+    opacity: 1; /* Se hace visible */
+    transform: scale(1); /* Vuelve a tamaño normal */
+    pointer-events: all; /* Permite interacción */
+}
+
+.bebida-descripcion h3 {
+    font-size: 21px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.bebida-descripcion p {
+    font-size: 18px;
+    color: #333;
+}
+
+.bebida-descripcion button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 7.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bebida-descripcion button:hover {
+    background-color: #0056b3;
 }
 
 .imagen-destacada {
@@ -263,11 +331,11 @@ button {
     color: #fff;
 }
 
-.btn-mas-info {
+.btn-ver-mas {
     background-color: #007bff;
 }
 
-.btn-mas-info:hover {
+.btn-ver-mas:hover {
     background-color: #0056b3;
 }
 
@@ -493,6 +561,8 @@ button {
     flex-direction: column;
     text-align: center;
     vertical-align: middle;
+    width: 100%;
+    height: 100%;
 }
 
 /********/
