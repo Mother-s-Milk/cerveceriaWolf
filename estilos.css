@@ -587,15 +587,15 @@ button {
 }
 
 @media screen and (max-width: 1217px) {
-    .tarjeta-destacada .info-bebida {
+    .tarjeta-container .info-bebida {
         font-size: 15px;
     }
 
-    .tarjeta-destacada h2 {
+    .tarjeta-container h2 {
         font-size: 24px;
     }
 
-    .tarjeta-destacada .acciones-tarjeta button {
+    .tarjeta-container .acciones-tarjeta button {
         font-size: 15px;
     }
 }
@@ -757,7 +757,7 @@ button {
         padding-bottom: 15px;
     }
 
-    .tarjeta-destacada {
+    .tarjeta-container {
         max-width: 360px;
         flex-shrink: 0;
     }
@@ -773,7 +773,7 @@ button {
 }
 
 @media screen and (max-width: 735px) {
-    .tarjeta-destacada {
+    .tarjeta-container {
         max-width: 330px;
     }
 
@@ -806,7 +806,7 @@ button {
         height: 75px;
     }
 
-    .tarjeta-destacada {
+    .tarjeta-container {
         max-width: 300px;
     }
 
@@ -874,11 +874,11 @@ button {
 }
 
 @media screen and (max-width: 361px) {
-    .tarjeta-destacada {
+    .tarjeta-container {
         max-width: 270px;
     }
 
-    .tarjeta-destacada .info-bebida {
+    .tarjeta-container .info-bebida {
         font-size: 13px;
     }
 }
